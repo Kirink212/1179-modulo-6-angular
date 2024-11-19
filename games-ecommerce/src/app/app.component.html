@@ -1,13 +1,14 @@
-<app-header></app-header>
+<app-header [drawer]="drawer"></app-header>
 
-<div class="container">
-    <app-game-card></app-game-card>
-    <app-game-card></app-game-card>
-    <app-game-card></app-game-card>
-    <app-game-card></app-game-card>
-    <app-game-card></app-game-card>
-    <app-game-card></app-game-card>
-    <app-game-card></app-game-card>
-</div>
+<mat-drawer-container autosize>
+    <mat-drawer #drawer mode="side">
+      <p>Auto-resizing sidenav</p>
+    </mat-drawer>
+  
+    <div>
+        <app-game-catalog></app-game-catalog>
+    </div>
+  
+</mat-drawer-container>
 
 <router-outlet />

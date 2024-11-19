@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { HeaderComponent } from './components/header/header.component';
-import { GameCardComponent } from './components/game-card/game-card.component';
+import { GameCatalogComponent } from "./pages/game-catalog/game-catalog.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, GameCardComponent],
+  imports: [RouterOutlet, HeaderComponent, GameCatalogComponent, MatSidenavModule],
   templateUrl: './app.component.html',
   // template: '<h1>Minha página bonita</h1>',
   styleUrl: './app.component.scss'

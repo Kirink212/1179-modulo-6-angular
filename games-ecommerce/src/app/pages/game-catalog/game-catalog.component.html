@@ -1,0 +1,10 @@
+<div class="container">
+    @for(gameObj of gamesArray; track gameObj.id) {
+        <app-game-card [game]="gameObj"></app-game-card>
+    } 
+    @empty {
+        <h2>Não há jogos registrados no momento!</h2>
+    }
+    <!-- <app-game-card></app-game-card>
+    <app-game-card></app-game-card> -->
+</div>

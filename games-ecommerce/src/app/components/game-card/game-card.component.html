@@ -1,21 +1,22 @@
-<mat-card class="game-card" appearance="outlined">
-    <mat-card-header>
-      <mat-card-title>Sonic Mania</mat-card-title>
-      <mat-card-subtitle>for Switch</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://m.media-amazon.com/images/I/81x9StmI4UL.jpg" alt="Photo of Sonic Mania game">
-    <mat-card-content>
-        <b>$59.00</b>
-        <p>
-            Sonic Mania is an all-new adventure with Sonic, Tails, and Knuckles full of unique bosses,
-            rolling 2D landscapes, and fun classic gameplay.
-        </p>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-icon-button>
-            <mat-icon>
-                add_shopping_cart
-            </mat-icon>
-        </button>
-    </mat-card-actions>
-  </mat-card>
+@if (game){
+    <mat-card class="game-card" appearance="outlined">
+        <mat-card-header>
+          <mat-card-title>{{ game.title }}</mat-card-title>
+          <mat-card-subtitle>for {{ game.platform }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{ game.imageLink }}" alt="Photo of {{ game.title }} game">
+        <mat-card-content>
+            <b>{{ game.price }}</b>
+            <p>
+                {{ game.description }}
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-icon-button>
+                <mat-icon>
+                    add_shopping_cart
+                </mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+}
