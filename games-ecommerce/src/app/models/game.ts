@@ -5,4 +5,5 @@ export interface Game {
     imageLink: string;
     price: number;
     description: string;
+    availableInStock?: number;
 }

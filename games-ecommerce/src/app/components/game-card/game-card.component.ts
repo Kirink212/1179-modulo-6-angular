@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
@@ -22,4 +22,10 @@ export class GameCardComponent {
     price: 0,
     description: "Mussum Ipsum, cacilds vidis litro abertis. Tá deprimidis, eu conheço uma cachacis que pode alegrar sua vidis. Quem num gosta di mé, boa gentis num é."
   };
+  @Output() warnGameCatalog: EventEmitter<Game> = new EventEmitter();
+
+  warnParentAboutItemAddition(game: Game) {
+    console.log(`Avisa ao meu pai que eu cliquei no jogo ${game.title}`);
+    this.warnGameCatalog.emit(game);
+  }
 }

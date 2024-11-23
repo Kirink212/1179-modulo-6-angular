@@ -1,13 +1,13 @@
 <app-header [drawer]="drawer"></app-header>
 
 <mat-drawer-container autosize>
-    <mat-drawer #drawer mode="side">
-      <p>Auto-resizing sidenav</p>
-    </mat-drawer>
-  
-    <div>
-        <app-game-catalog></app-game-catalog>
-    </div>
+  <mat-drawer #drawer mode="side">
+    <app-cart [cartArr]="cartItemsArray"></app-cart>
+  </mat-drawer>
+
+  <div>
+    <app-game-catalog (warnApp)="addItemToCart($event)"></app-game-catalog>
+  </div>
   
 </mat-drawer-container>
 

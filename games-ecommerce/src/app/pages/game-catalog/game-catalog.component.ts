@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 import { Game } from '../../models/game';
 import { GameCardComponent } from "../../components/game-card/game-card.component";
@@ -11,6 +11,7 @@ import { GameCardComponent } from "../../components/game-card/game-card.componen
   styleUrl: './game-catalog.component.scss'
 })
 export class GameCatalogComponent {
+  @Output() warnApp: EventEmitter<Game> = new EventEmitter();
   gamesArray: Game[] = [
     {
       id: 1,
@@ -38,4 +39,9 @@ export class GameCatalogComponent {
       description: "Get Batman: Arkham City and all DLC for one low price with the release of the GOTY Edition!"
     }
   ];
+
+  warnParentAboutItemAddition(game: Game) {
+    console.log(`Qual foi, filhão! Relaxa q vou avisar ao meu pai também que você clicou no ${game.title}.`);
+    this.warnApp.emit(game);
+  }
 }
