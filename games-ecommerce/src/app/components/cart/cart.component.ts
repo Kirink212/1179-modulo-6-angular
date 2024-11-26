@@ -1,10 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input, signal, Signal } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+
 import { CartItem } from '../../models/cart-item';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -20,18 +22,22 @@ import { CartItem } from '../../models/cart-item';
   styleUrl: './cart.component.scss'
 })
 export class CartComponent {
-  totalPrice: number = 0;
-  @Input("cartArr") cartItemsArray: CartItem[] = [];
+  private cartService: CartService;
+  totalPrice: Signal<number> = signal(0);
+  // @Input("cartArr") cartItemsArray: CartItem[] = [];
+  cartItemsArray: CartItem[] = [];
+
+  constructor() {
+    this.cartService = inject(CartService); // Angular 16+
+    this.cartItemsArray = this.cartService.getCartArray();
+    this.totalPrice = this.cartService.getTotalPrice;
+  }
 
   addItem(item: CartItem) {
-    item.quantity++;
-    this.totalPrice += item.product.price;
+    this.cartService.addItem(item);
   }
 
   removeItem(item: CartItem) {
-    if (item.quantity <= 0) return;
-    item.quantity--;
-    this.totalPrice -= item.product.price;
-    this.totalPrice = Math.max(this.totalPrice, 0);
+    this.cartService.removeItem(item);
   }
 }

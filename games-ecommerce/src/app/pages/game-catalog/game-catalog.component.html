@@ -1,6 +1,7 @@
 <div class="container">
     @for(gameObj of gamesArray; track gameObj.id) {
-        <app-game-card [game]="gameObj" (warnGameCatalog)="warnParentAboutItemAddition($event)"></app-game-card>
+        <!-- <app-game-card [game]="gameObj" (warnGameCatalog)="warnParentAboutItemAddition($event)"></app-game-card> -->
+        <app-game-card [game]="gameObj"></app-game-card>
     } 
     @empty {
         <h2>Não há jogos registrados no momento!</h2>

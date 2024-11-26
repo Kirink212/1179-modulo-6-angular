@@ -8,7 +8,7 @@
                         <mat-icon>remove</mat-icon>
                     </button>
                     <span>{{ item.quantity }}</span>
-                    <button (click)="addItem(item)" mat-icon-button [disabled]="item.quantity >= 10">
+                    <button (click)="addItem(item)" mat-icon-button [disabled]="item.quantity >= item.product.availableInStock">
                         <mat-icon>add</mat-icon>
                     </button>
                 </div>
@@ -18,4 +18,4 @@
     }
 </mat-list>
 
-<b>Total da Compra: {{ totalPrice | currency:'R$' }}</b>
+<b>Total da Compra: {{ totalPrice() | currency:'R$' }}</b>
