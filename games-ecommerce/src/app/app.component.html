@@ -1,15 +1,14 @@
 <app-header [drawer]="drawer"></app-header>
 
-<mat-drawer-container autosize>
+<mat-drawer-container style="height: 100%;" autosize>
   <mat-drawer #drawer mode="side">
     <app-cart></app-cart>
   </mat-drawer>
 
   <div>
     <!-- <app-game-catalog (warnApp)="addItemToCart($event)"></app-game-catalog> -->
-    <app-game-catalog></app-game-catalog>
+    <router-outlet />
+    <!-- O router-outlet representa o seletor do componente atual (com base na rota) -->
   </div>
   
 </mat-drawer-container>
-
-<router-outlet />

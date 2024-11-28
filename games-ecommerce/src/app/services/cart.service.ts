@@ -12,6 +12,21 @@ export class CartService {
 
   constructor() {
     this.getTotalPrice = this.totalPrice.asReadonly();
+
+    // Puxar os dados do array de items (carrinho)
+    this.cartItemsArray = JSON.parse(localStorage.getItem("cartItemsArray") || "[]");
+
+    // Garantir que a chave "cartItemsArray" exista no meu localStorage
+    if (this.cartItemsArray.length == 0) localStorage.setItem("cartItemsArray", "[]");
+
+    // Com base nos dados já registrados no localStorage, calcular o preço total
+    this.totalPrice.update(() => this.calculateTotalPrice());
+  }
+
+  calculateTotalPrice() {
+    return this.cartItemsArray.reduce((prevValue, currValue) => {
+      return prevValue + currValue.product.price * currValue.quantity;
+    }, 0);
   }
 
   getItemById(id: number) {
@@ -44,6 +59,8 @@ export class CartService {
       return previousValue + item.product.price;
     });
     // this.totalPrice += item.product.price; -> Equivalente ao que é feito nas linhas anteriores
+
+    localStorage.setItem("cartItemsArray", JSON.stringify(this.cartItemsArray));
   }
 
   removeItem(item: CartItem) {
@@ -60,6 +77,7 @@ export class CartService {
 
     // this.totalPrice -= item.product.price;
     // this.totalPrice = Math.max(this.totalPrice, 0);
+    localStorage.setItem("cartItemsArray", JSON.stringify(this.cartItemsArray));
   }
 
   // Adiciona um item ao carrinho ou atualizar a quantidade desse item no carrinho
@@ -76,10 +94,10 @@ export class CartService {
       this.totalPrice.update((previousValue: number) => {
         return previousValue + game.price;
       });
+
+      localStorage.setItem("cartItemsArray", JSON.stringify(this.cartItemsArray));
     } else {
       this.addItem(this.cartItemsArray[index]);
     }
-    
-    console.log(this.cartItemsArray);
   }
 }
