@@ -1,0 +1,74 @@
+{
+  "games": [
+    {
+      "id": "1",
+      "title": "Sonic Mania",
+      "platform": "Switch",
+      "imageLink": "https://m.media-amazon.com/images/I/81x9StmI4UL.jpg",
+      "price": 59.9,
+      "description": "Sonic Mania is an all-new adventure with Sonic, Tails, and Knuckles full of unique bosses, rolling 2D landscapes, and fun classic gameplay.",
+      "availableInStock": 5
+    },
+    {
+      "id": "2",
+      "title": "Among Us",
+      "platform": "PC",
+      "imageLink": "https://cdn1.epicgames.com/salesEvent/salesEvent/amogusportrait_1200x1600-66ad0e4d363e1c92f9f8aae67a96dd31",
+      "price": 29.9,
+      "description": "Um jogo de trabalho em equipe e trairagem online ou em rede local para 4 a 15 jogadores... no espaço!",
+      "availableInStock": 3
+    },
+    {
+      "id": "3",
+      "title": "Batman Arkham City",
+      "platform": "Xbox 360",
+      "imageLink": "https://m.media-amazon.com/images/I/91M+kghNZtL.jpg",
+      "price": 39.9,
+      "description": "Get Batman: Arkham City and all DLC for one low price with the release of the GOTY Edition!",
+      "availableInStock": 10
+    },
+    {
+      "id": "4",
+      "title": "Devil May Cry (2013)",
+      "platform": "Xbox 360",
+      "imageLink": "https://m.media-amazon.com/images/I/81fokXyJXRL.jpg",
+      "price": 29.9,
+      "description": "Dante depois de voltar do AA.",
+      "availableInStock": 25
+    },
+    {
+      "id": "b116",
+      "title": "Devil May Cry (2013)",
+      "platform": "Xbox 360",
+      "imageLink": "https://m.media-amazon.com/images/I/81fokXyJXRL.jpg",
+      "price": 29.9,
+      "description": "Dante depois de voltar do AA.",
+      "availableInStock": 25
+    },
+    {
+      "id": "0d8f",
+      "title": "Grand Theft Auto IV",
+      "platform": "PC",
+      "imageLink": "https://upload.wikimedia.org/wikipedia/pt/9/91/Grand_Theft_Auto_IV_capa.png",
+      "price": 19.9,
+      "description": "Niko Bellic, Johnny Klebitz e Luis Lopez têm uma coisa em comum: vivem na pior cidade da América. Liberty City venera o dinheiro e o estatuto social e é um paraíso para aqueles que os possuem e um verdadeiro pesadelo para os restantes.",
+      "availableInStock": 50
+    },
+    {
+      "id": "9331",
+      "title": "asdasdasd",
+      "platform": "asdasda",
+      "imageLink": "sadsdasdasd",
+      "price": 0,
+      "description": "asdasdasd",
+      "availableInStock": 0
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin123"
+    }
+  ]
+}

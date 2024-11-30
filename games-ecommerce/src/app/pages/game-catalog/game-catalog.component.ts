@@ -19,7 +19,9 @@ export class GameCatalogComponent {
   constructor() {
     this.gameService = inject(GameService);
 
-    this.gamesArray = this.gameService.getAllGames();
+    this.gameService.getAllGames().subscribe((gamesArray: Game[]) => {
+      this.gamesArray = gamesArray;
+    });
   }
 
   // warnParentAboutItemAddition(game: Game) {
