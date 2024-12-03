@@ -38,6 +38,11 @@ export class GameFormComponent {
   }
 
   submitForm(){
+    if (this.gameForm.invalid) {
+      this.snackBar.open("Formulário possui campos inválidos!", "Fechar");
+      return;
+    }
+
     console.log("Formulário foi submetido!");
     console.log(this.gameForm.value);
     

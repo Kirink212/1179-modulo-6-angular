@@ -7,7 +7,14 @@
     <div>
       <a mat-button routerLink="/">Books Catalog</a>
       <a mat-button routerLink="/form">Add New Book</a>
+      @if (userIsAuthenticated()) {
+        <a mat-button (click)="logout()">Logout</a>
+      }
+      @else {
+        <a mat-button routerLink="/login">Login</a>
+      }
     </div>
+    
     <button (click)="openCart()" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
       <mat-icon>shopping_cart</mat-icon>
     </button>
